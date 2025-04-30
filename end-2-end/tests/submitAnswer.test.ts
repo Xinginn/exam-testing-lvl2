@@ -12,9 +12,7 @@ test('Submit Answer', async ({ page }) => {
   const submitAnswerButton = page.getByRole('button', { name: 'Répondre' });
   await page.getByRole('button', { name: 'Répondre' }).click();
 
-  // await page.getByText('❌ Fausse !').click();
-
-  const correctionBlock = await page.getByText('Réponse corrigée');
+  const correctionBlock = page.getByText('Réponse corrigée');
   const baseAnswerBlock = page.getByText('Réponse de base du système');
   const newQuestionLink = page.getByRole('link', { name: 'Nouvelle question' });
 
